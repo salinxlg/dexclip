@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assx/fonts/@import_apple.css">
+</head>
+
+<style>
+
+    *{
+
+        user-select: none;
+
+    }
+
+    html{
+
+        background-color: transparent !important;
+
+    }
+
+    body{
+
+        width: 100%;
+        height:100vh;
+        overflow: hidden;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        background-color: transparent;
+
+    }
+
+    main{
+
+        width:100%;
+        height:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        flex-direction: column;
+        background-color: transparent;
+        overflow: hidden;
+        border-radius:20px;
+        position:absolute;
+        top:0px;
+        left:0px;
+
+    }
+
+    .icon{
+
+        width:70px;
+        height:70px;
+        background-image: url(../assx/img/dexlogo.png);
+        background-position:center;
+        background-size: cover;
+        margin-bottom:25px;
+        transition: all 300ms;
+
+    }
+
+    .text{
+
+        color:#9b9b9b;
+        font-family:rounded;
+        font-size:23px;
+
+    }
+
+</style>
+
+<body>
+
+    <main>
+
+        <div class="icon"></div>
+        <t class="text">Dexly Studios</t>
+
+    </main>
+
+</body>
+
+<script>
+
+    const icon = document.querySelector('.icon');
+    const text = document.querySelector('.text');
+
+    window.addEventListener('load', function(){
+
+        setTimeout(() => {
+
+            icon.style.backgroundImage = `url(../assx/img/logo.png)`;
+            text.innerHTML = 'Dexly Clip';
+
+            setTimeout(() => {
+                
+                window.preloader.done();
+
+            }, 2000);
+
+        }, 1000)
+
+    })
+
+    window.addEventListener('keydown', function(e){
+
+        if(e.ctrlKey && e.keyCode == 82 || e.ctrlKey && e.keyCode == 87){
+
+            e.preventDefault()
+
+        }
+
+    })
+
+</script>
+
+</html>

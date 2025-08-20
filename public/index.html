@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexly DexClip</title>
+    <link rel="shortcut icon" href="/assx/img/logo.ico" type="image/x-icon">
+
+    <script>
+
+        if(typeof apx === 'undefined' || apx.mode != 'com.dex.platform' || apx.vendor != 'Dexly LLC'){window.location.href = '/error/' }
+
+    </script>
+
+</head>
+<body>
+
+    <movebar>
+
+        <controls>
+
+            <div class="c" onclick="window.apxcontrols.apxcls()">
+
+               <i class="fi fi-rr-cross-small"></i>
+
+            </div>
+            <div class="mx">
+
+                <i class="fi fi-rr-arrow-small-up Maximize" style="font-size:15px;"></i>
+                <i class="fi fi-rr-clone Restore" style="font-size: 9px; display: none; position:absolute;"></i>
+
+            </div>
+            <div class="mn">
+
+               <i class="fi fi-rs-angle-down" style="color: black;"></i>
+
+            </div>
+
+        </controls>
+
+    </movebar>
+
+    <aside class="sidebar">
+
+        <header>
+
+            <logo></logo>
+            <t>DexClip</t>
+
+        </header>
+
+        <block class="mainfolders">
+
+            <child class="current"> <corner></corner> <i class="fi fi-rr-house-blank"></i> <t>Página de Inicio</t> </child>
+            <child> <corner></corner> <i class="fi fi-rr-screen"></i> <t>Escritorio</t> </child>
+            <child> <corner></corner> <i class="fi fi-rr-progress-download"></i> <t>Descargas</t> </child>
+            <child> <corner></corner> <i class="fi fi-rr-document-signed"></i> <t>Documentos</t> </child>
+            <child> <corner></corner> <i class="fi fi-rr-tv-retro"></i> <t>Entretenimiento</t> </child>
+
+
+        </block>
+
+        <block class="disks">
+
+            <t1>Unidades <i class="fi fi-rs-angle-small-down"></i> </t1>
+            <child class="LocalDisk"> <corner></corner> <i class="fi fi-rs-box"></i> <t>Disco local (C:)</t> </child>
+            <child><corner></corner> <i class="fi fi-sr-sitemap"></i> <t>Dispositivos de red</t> </child>
+
+            <div class="ExternalDisks"></div>
+
+        </block>
+
+        <block class="appsettings">
+
+            <child style="display: none;"> <i class="HelloIDLogo"></i> <t>Iniciar sesión en Hello ID</t> </child>  
+            <child class="ProfileCard"> <pp></pp> <t>Alejandro Salinas</t> </child>
+            <child> <i class="fi fi-rr-settings"></i> <t>Configuración</t> </child>
+            <child class="AboutDex"> <i class="fi fi-sr-bolt"></i> <t>Acerca de DexClip</t> </child>
+
+        </block>
+
+         <resizer class="resizer" id="resizer"></resizer>
+
+    </aside>
+
+    <main class="content">
+
+        <page class="recents Page active">
+
+            <section>
+
+                <element>
+
+                    <div class="logged">
+
+                        <pp></pp>
+                        <t style="text-shadow: none !important;">Alejandro Salinas</t>
+                        <un>@salinxlg</un>
+
+                    </div>
+
+                </element>
+
+                <element>
+
+                    <id></id>
+                    <t>Disco Local</t>
+                    <un>1 TB</un>
+
+                </element>
+
+                <element>
+
+                    <id></id>
+                    <t>Dexly Clip</t>
+                    <un>7.1.0</un>
+        
+                </element>
+
+                <element>
+
+                    <div class="logged">
+
+                        <pp></pp>
+                        <t style="text-shadow: none !important;">Alejandro Salinas</t>
+                        <un>Desarrollador</un>
+    
+
+                    </div>
+
+                </element>
+
+            </section>
+
+            <section>
+
+                <element>
+
+                    <i class="fi fi-rr-link"></i>
+                    <t>Conectarse con otros</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-sr-signal-stream"></i>
+                    <t>Montar servidor</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-devices"></i>
+                    <t>Lista de dispositivos</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-sitemap"></i>
+                    <t>Dispositivos de Red</t>
+
+                </element>
+
+                <element class="CloudOption">
+
+                    <i class="fi fi-rr-cloud"></i>
+                    <t>Administrar DexSync</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-box-open"></i>
+                    <t>Administrador de paquetes</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-chart-pie-alt"></i>
+                    <t>Espacio disponible</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-file-zipper"></i>
+                    <t>Comprimir archivo</t>
+
+                </element>
+
+            </section>
+
+            <section>
+
+                <element>
+
+                    <i class="fi fi-rr-clock-three"></i>
+                    <t>Recientes</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-screen"></i>
+                    <t>Escritorio</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-progress-download"></i>
+                    <t>Descargas</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-tv-retro"></i>
+                    <t>Entretenimiento</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-rr-box"></i>
+                    <t>Utilidades</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-sr-time-past"></i>
+                    <t>Backups</t>
+
+                </element>
+
+                <element>
+
+                    <i class="fi fi-ts-trash-empty"></i>
+                    <t>Papelera</t>
+
+                </element>
+
+            </section>
+
+        </page>
+
+        <page class="directories Page">
+
+            <header>
+
+                <div class="navigation">
+
+                    <i class="fi fi-rr-angle-small-left"></i>
+                    <i class="fi fi-rr-angle-small-right"></i>
+                    <i class="fi fi-br-rotate-right" style="font-size: 12px;"></i>
+
+
+                </div>
+
+                <div class="path">
+
+                    <div class="prettypath"><i class="fi fi-tr-screen"></i> <i class="fi fi-rr-angle-small-right"></i> Escritorio <i class="fi fi-rr-angle-small-right"></i> DexClip</div>
+                    <input type="text" class="rawpath" spellcheck="false">
+
+                </div>
+
+                <div class="search">
+
+                    <i class="fi fi-br-search"></i>
+                    <input type="text" placeholder="Buscar en Escritorio" spellcheck="false" class="SearchInFiles">
+
+                </div>
+
+            </header>
+
+            <content class="FilesContainer">
+
+                <div class="filescontent">
+
+                    <div class="child">
+
+                        <mime></mime>
+                        <name>main.js</name>
+
+                    </div>
+                 
+                </div>
+
+            </content>
+
+        </page>
+
+        <page class="about Page">
+
+            <section>
+
+                <picon> <icon></icon> </picon>
+                <t>No preguntes cuántas horas me tomó, pero lo hice</t>
+                <p>Hubo errores, reinicios forzados y gritos al monitor, hasta borre el sistema por accidente. Pero al final al final funcionó, o eso creo  <emj>🙏🏼</emj></p>
+                <sign><st>Alejandro Salinas</st></sign>
+
+            </section>
+
+            <section></section>
+            <section></section>
+
+        </page>
+
+    </main>
+
+    
+</body>
+
+<script src="/assx/com.js/prep.dexkit.js"></script>
+
+</html>
