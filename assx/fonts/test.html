@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Fuentes</title>
+    <style>
+        /* Fuentes que has definido */
+        @font-face {
+            font-family: 'Heavy';
+            src: url('AppleKit/Heavy.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Semibold';
+            src: url('AppleKit/Semibold.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Rails';
+            src: url('AppleKit/Rails.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Rounded';
+            src: url('AppleKit/Rounded.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Soft';
+            src: url('AppleKit/Soft.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Stencil';
+            src: url('AppleKit/Stencil.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Semibold Pro';
+            src: url('AppleKit/Semibold\ Pro.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'AppleEmoji';
+            src: local('Apple Color Emoji'), local('AppleColorEmoji'), local('apple-color-emoji');
+            src:
+                url('AppleKit/AppleColorEmoji.woff2') format('woff2'),
+                url('AppleKit/AppleColorEmoji.woff') format('woff'),
+                url('AppleKit/AppleColorEmoji.ttf') format('truetype'),
+                url('AppleKit/AppleColorEmoji.eot?'),
+                url('AppleKit/AppleColorEmoji.eot?#iefix') format('embedded-opentype'),
+                url('AppleKit/AppleColorEmoji.svg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        emj{
+
+            font-family: 'AppleEmoji';            
+
+        }
+
+        /* Estilos Generales */
+        body {
+            width: 100%;
+            height:100%;
+            position:absolute;
+            top:0px;
+            left:0px;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-position:center;
+            background-size:cover;
+        }
+
+        header {
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        /* Efecto de Blur */
+        .blur-background {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .control-panel {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        input[type="color"], input[type="number"], select, input[type="file"], input[type="radio"] {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .text-sample {
+            margin-top: 20px;
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .text-sample div {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para modo claro/oscuro */
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        .light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .text-sample.dark-mode {
+            color: white;
+        }
+
+        header.dark-mode {
+            color: white;
+        }
+
+        #outputText{
+
+            position:absolute;
+
+        }
+    </style>
+</head>
+<body id="body" class="dark-mode">
+
+    <div class="container">
+        <div class="control-panel blur-background">
+            <input type="text" id="inputText" placeholder="Escribe algo aquí..." oninput="updateText()">
+            
+            <label for="fontSize">Tamaño de fuente:</label>
+            <input type="number" id="fontSize" value="50" min="1" max="1000" oninput="updateText()">
+
+            <label for="fontColor">Color de la fuente:</label>
+            <input type="color" id="fontColor" value="#FFFFFF" oninput="updateText()">
+
+            <label for="fontWeight">Peso de la fuente:</label>
+            <select id="fontWeight" onchange="updateText()">
+                <option value="normal">Normal</option>
+                <option value="bold">Negrita</option>
+                <option value="lighter">Ligero</option>
+                <option value="bolder">Más grueso</option>
+            </select>
+            <br>
+            <label for="backgroundImage">Cargar Imagen de Fondo:</label>
+            <input type="file" id="backgroundImage" accept="image/*" onchange="changeBackgroundImage(event)">
+            
+            <label for="themeSwitcher">Cambiar Tema:</label>
+            <input type="radio" name="theme" value="light" onchange="changeTheme('light')"> Claro
+            <input type="radio" name="theme" value="dark" checked onchange="changeTheme('dark')"> Oscuro
+        </div>
+
+        <div class="text-sample" id="outputText"></div>
+    </div>
+
+    <script>
+        function updateText() {
+            let input = document.getElementById("inputText").value;
+            let fontSize = document.getElementById("fontSize").value;
+            let fontColor = document.getElementById("fontColor").value;
+            let fontWeight = document.getElementById("fontWeight").value;
+            let output = document.getElementById("outputText");
+            
+            output.innerHTML = `
+                <div style="font-family: 'Heavy'; font-size: ${fontSize}px; color: ${fontColor}; font-weight: ${fontWeight};">Heavy: ${input}</div>
+                <div style="font-family: 'Semibold'; font-size: ${fontSize}px; color: ${fontColor}; font-weight: ${fontWeight};">Semibold: ${input}</div>
+                <div style="font-family: 'Rails'; font-size: ${fontSize}px; color: ${fontColor}; font-weight: ${fontWeight};">Rails: ${input}</div>
+                <div style="font-family: 'Rounded'; font-size: ${fontSize}px; color: ${fontColor}; font-weight: ${fontWeight};">Rounded: ${input}</div>
+                <div style="font-family: 'Soft'; font-size: ${fontSize}px; color: ${fontColor}; font-weight: ${fontWeight};">Soft: ${input}</div>
+                <div style="font-family: 'Stencil'; font-size: ${fontSize}px; color: ${fontColor}; font-weight: ${fontWeight};">Stencil: ${input}</div>
+                <div style="font-family: 'Semibold Pro'; font-size: ${fontSize}px; color: ${fontColor}; font-weight: ${fontWeight};">Semibold Pro: ${input}</div>
+                <div class="emj" style="font-size: ${fontSize}px; color: ${fontColor}; font-weight: ${fontWeight};">AppleEmoji: ${input} <emj>⚡</emj></div>
+            `;
+        }
+
+        function changeBackgroundImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.body.style.backgroundImage = `url(${e.target.result})`;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function changeTheme(theme) {
+            const body = document.getElementById("body");
+            const header = document.getElementById("header");
+            const textSample = document.querySelectorAll('.text-sample');
+
+            if (theme === "dark") {
+                body.classList.remove("light-mode");
+                body.classList.add("dark-mode");
+                header.classList.add("dark-mode");
+                textSample.forEach((text) => text.classList.add("dark-mode"));
+            } else {
+                body.classList.remove("dark-mode");
+                body.classList.add("light-mode");
+                header.classList.remove("dark-mode");
+                textSample.forEach((text) => text.classList.remove("dark-mode"));
+            }
+        }
+    </script>
+
+</body>
+</html>

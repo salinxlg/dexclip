@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Heavy';
+    src: url('AppleKit/Heavy.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Semibold';
+    src: url('AppleKit/Semibold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Rails';
+    src: url('AppleKit/Rails.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Rounded';
+    src: url('AppleKit/Rounded.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Soft';
+    src: url('AppleKit/Soft.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Stencil';
+    src: url('AppleKit/Stencil.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Semibold Pro';
+    src: url('AppleKit/Semibold\ Pro.otf') format('opentype');
+}
+
+
+@font-face {
+    font-family: 'AppleEmoji';
+    src: local('Apple Color Emoji'), local('AppleColorEmoji'), local('apple-color-emoji');
+    src:
+    url('AppleKit/AppleColorEmoji.woff') format('woff'),
+    url('AppleKit/AppleColorEmoji.ttf') format('truetype'),
+    url('AppleKit/AppleColorEmoji.eot?'),
+    url('AppleKit/AppleColorEmoji.eot?#iefix') format('embedded-opentype'),
+    url('AppleKit/AppleColorEmoji.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+emj{
+
+    font-family:"AppleEmoji" !important;
+
+}

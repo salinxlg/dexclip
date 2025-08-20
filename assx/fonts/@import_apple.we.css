@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Heavy';
+    src: url('AppleKit/Heavy.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Semibold';
+    src: url('AppleKit/Semibold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Rails';
+    src: url('AppleKit/Rails.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Rounded';
+    src: url('AppleKit/Rounded.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Soft';
+    src: url('AppleKit/Soft.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Stencil';
+    src: url('AppleKit/Stencil.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Semibold Pro';
+    src: url('AppleKit/Semibold\ Pro.otf') format('opentype');
+}
