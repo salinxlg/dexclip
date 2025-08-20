@@ -1,0 +1,35 @@
+{
+  "name": "dexclip",
+  "version": "1.0.0",
+  "main": "srx/com.config.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@flaticon/flaticon-uicons": "^3.3.1",
+    "animate.css": "^4.1.1",
+    "dexkit": "^7.1.2",
+    "diskusage": "^1.2.0",
+    "drivelist": "^12.0.2",
+    "electron": "^37.2.4",
+    "electron-builder": "^26.0.12",
+    "electron-mica": "^1.0.0",
+    "execa": "^9.6.0",
+    "express": "^5.1.0",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "fs-extra": "^11.3.1",
+    "mica-electron": "^1.5.16",
+    "node-disk-info": "^1.3.0",
+    "node-notifier": "^10.0.1",
+    "os": "^0.1.2",
+    "shell": "^0.12.0",
+    "tmp": "^0.2.4",
+    "winattr": "^3.0.0"
+  }
+}
